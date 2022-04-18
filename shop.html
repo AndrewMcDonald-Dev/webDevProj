@@ -7,14 +7,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/shop.css">
     <title>Shop</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand logo">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Shoppy
+        </a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                Search
+            </button>
+        </form>
+        <span class="navbar-text">
+            <a class="btn my-sm-0 btn-primary" id="cart-button">
+                Cart
+            </a>
+            <a class="btn btn-secondary" id="logout">Logout</a>
 
+        </span>
+    </nav>
+
+    <div class="wrap-items">
+
+    </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="module" src="./src/index.js"> </script>
+<script type="text/javascript" src="./src/models/user.js"> </script>
+<script type="text/javascript" src="./src/models/item.js"> </script>
+<script>
+
+    if (localStorage.getItem('user') == null) {
+        window.location.href = "./login.html";
+    }
+
+    $(document).ready(function () {
+        $('#cart-button').click(function () {
+            $('#cart-button').toggleClass('active');
+            window.location.href = "./cart.html";
+
+        })
+
+    });
+
+    const moveToCart = () => {
+        window.location.href = './cart.html';
+    }
+
+    $('#logout').click(() => {
+        localStorage.removeItem('user');
+        window.location.href = './login.html';
+    })
+
+
+    $(document).ready(() => {
+
+        itemList.forEach((item) => {
+            $('.wrap-items').append(`
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="${item.pic}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${item.name}</h5>
+                    <p class="card-text">${item.description}</p>
+                    <a href="#" class="btn btn-primary" id="item-${item.id}">Add to Cart</a>
+                    </div>
+                    </div>
+                    `)
+        })
+
+    })
+</script>
 
 </html>

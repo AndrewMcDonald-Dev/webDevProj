@@ -11,24 +11,25 @@
     <link rel="stylesheet" href="styles/forms/general-form.css">
     <link rel="stylesheet" href="styles/forms/login.css">
     <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
     <div id="nav-placeholder"></div>
 
     <div class="wrap">
-        <form class="login-form form" action="">
+        <form class="login-form form">
             <div class="form-header">
                 <h3>Login</h3>
             </div>
             <div class="form-group">
-                <input type="email" class="form-input" placeholder="Email" required>
+                <input type="email" class="form-input" placeholder="Email" id="email" required">
             </div>
             <div class="form-group">
-                <input type="password" class="form-input" placeholder="Password" required>
+                <input type="password" class="form-input" placeholder="Password" id="password" required>
             </div>
             <div class="form-group">
-                <a href="#" class="form-forgot">Forgot Password?</a>
+                <a href="/password.html" class="form-forgot">Forgot Password?</a>
             </div>
             <div class="form-group">
                 <button class="form-button" type="submit">Login</button>
@@ -40,6 +41,27 @@
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="module" src="./src/index.js"> </script>
+<script type="text/javascript" src="./src/index.js"> </script>
+<script type="text/javascript" src="./src/models/user.js"> </script>
+
+<script>
+    $(document).ready(() => {
+        $('button').click((event) => {
+            event.preventDefault()
+            const email = $('#email').val();
+            const password = $('#password').val();
+            const user = login(email, password);
+            if (user) {
+                localStorage.setItem('user', JSON.stringify(user));
+                window.location.href = '/shop.html';
+            } else
+                throw {
+                    name: 'LoginError',
+                    message: 'Invalid email or password'
+                }
+
+        });
+    });
+</script>
 
 </html>
