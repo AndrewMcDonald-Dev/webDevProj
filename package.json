@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "start:run": "nodemon index.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

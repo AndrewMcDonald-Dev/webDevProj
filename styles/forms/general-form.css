@@ -1,7 +1,8 @@
 html,
 body {
-    height: 100%;
+    height: 97%;
 }
+
 .wrap {
     width: 100%;
     height: 100%;
@@ -18,6 +19,10 @@ body {
     background: #eeeeee;
     box-shadow: 7px 7px 30px rgb(165, 164, 164);
     border-radius: 10px;
+
+    -ms-transform: scale(0.65, 0.65);
+    -webkit-transform: scale(0.65, 0.65);
+    transform: scale(0.65, 0.65);
 }
 
 .form-input {
