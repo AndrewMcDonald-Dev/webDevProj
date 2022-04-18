@@ -7,42 +7,38 @@ const itemList = [
         description: 'A brand new left handed guitar!',
     },
     {
-        name: 'Guitar',
-        price: '550',
+        name: 'Roses',
+        price: '50',
         id: 2,
-        pic: '../../images/guitar.jpg',
-        description: 'A brand new left handed guitar!',
+        pic: '../../images/roses.jpg',
+        description: 'Beutiful roses!',
     },
     {
-        name: 'Guitar',
-        price: '550',
+        name: 'Mulch',
+        price: '20',
         id: 3,
-        pic: '../../images/guitar.jpg',
-        description: 'A brand new left handed guitar!',
+        pic: '../../images/Mulch.webp',
+        description: 'Nice Rich Mulch!',
     },
     {
-        name: 'Guitar',
-        price: '550',
+        name: 'Flowering Dogwood',
+        price: '60',
         id: 4,
-        pic: '../../images/guitar.jpg',
-        description: 'A brand new left handed guitar!',
+        pic: '../../images/Dogwood.webp',
+        description: 'A nice dogwood!',
     },
     {
-        name: 'Guitar',
+        name: 'Australian Labradoodle',
         price: '550',
-        id: 4,
-        pic: '../../images/guitar.jpg',
-        description: 'A brand new left handed guitar!',
+        id: 5,
+        pic: '../../images/labra.webp',
+        description: 'My dog is this breed!',
     },
 ];
 
 let highestIdItem = 5;
 
-const cart = [
-    {
-        id: -1,
-    },
-];
+const cart = [];
 
 // const user = localStorage.getItem('user');
 // if (user) session.user = JSON.parse(user);
@@ -83,7 +79,4 @@ const addItemToCart = (id) => {
 
 const clearCart = () => {
     cart.splice(0, cart.length);
-    cart.push({
-        id: -1,
-    });
 };

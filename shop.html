@@ -26,10 +26,10 @@
             </button>
         </form>
         <span class="navbar-text">
-            <a class="btn my-sm-0 btn-primary" id="cart-button">
+            <a class="btn btn-primary" id="cart-button" href="#">
                 Cart
             </a>
-            <a class="btn btn-secondary" id="logout">Logout</a>
+            <a class="btn btn-secondary" id="logout" href="#">Logout</a>
 
         </span>
     </nav>
@@ -46,17 +46,17 @@
     if (localStorage.getItem('user') == null) {
         window.location.href = "./login.html";
     }
-
     $(document).ready(function () {
         $('#cart-button').click(function () {
             $('#cart-button').toggleClass('active');
-            window.location.href = "./cart.html";
+            moveToCart()
 
         })
 
     });
 
     const moveToCart = () => {
+        localStorage.setItem('cart', JSON.stringify(cart));
         window.location.href = './cart.html';
     }
 
@@ -75,13 +75,21 @@
                 <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
                     <p class="card-text">${item.description}</p>
-                    <a href="#" class="btn btn-primary" id="item-${item.id}">Add to Cart</a>
+                    <button class="btn btn-primary card-cart" id="item-${item.id}">Add to Cart</button>
                     </div>
                     </div>
                     `)
+            $(`#item-${item.id}`).click(() => {
+                $(this).toggleClass('active');
+                addItemToCart(item.id);
+            })
+
+
         })
 
     })
+
+
 </script>
 
 </html>
