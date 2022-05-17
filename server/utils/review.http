@@ -1,0 +1,22 @@
+###
+
+post http://localhost:3000/api/reviews/seed
+
+
+###
+
+get http://localhost:3000/api/reviews
+
+
+###
+
+delete http://localhost:3000/api/reviews/2
+
+
+###
+
+
+get http://localhost:3000/api/reviews/all/3
+
+
+###

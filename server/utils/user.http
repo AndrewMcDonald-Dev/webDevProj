@@ -1,0 +1,27 @@
+###
+
+post http://localhost:3000/api/users/seed
+
+
+###
+
+get http://localhost:3000/api/users
+
+
+###
+
+delete http://localhost:3000/api/users/18
+
+
+###
+
+post http://localhost:3000/api/users/
+Content-Type: application/json
+
+{
+  "username": "John Doe",
+  "email": "simple@email.com",
+  "password": "qwerty",
+  "dob": 1000000000,
+  "pfp": "https://randomuser.me/portraits/women/1.jpg"
+}

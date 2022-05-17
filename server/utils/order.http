@@ -1,0 +1,16 @@
+###
+
+post http://localhost:3000/api/orders/seed
+
+
+###
+
+get http://localhost:3000/api/orders/all/1
+
+
+###
+
+delete http://localhost:3000/api/orders/4
+
+
+###

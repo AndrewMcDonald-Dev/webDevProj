@@ -1,0 +1,21 @@
+###
+
+post http://localhost:3000/api/items/seed
+
+
+###
+
+get http://localhost:3000/api/items/all
+
+
+###
+
+delete http://localhost:3000/api/items/14
+
+
+###
+
+get http://localhost:3000/api/items/all
+
+
+###

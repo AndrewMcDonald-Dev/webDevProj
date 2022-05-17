@@ -1,0 +1,112 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Import only what you need from Bootstrap */
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/accordion';
+@import 'bootstrap/scss/alert';
+@import 'bootstrap/scss/badge';
+@import 'bootstrap/scss/breadcrumb';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/button-group';
+@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/carousel';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/dropdown';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/list-group';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar';
+@import 'bootstrap/scss/offcanvas';
+@import 'bootstrap/scss/pagination';
+@import 'bootstrap/scss/popover';
+@import 'bootstrap/scss/progress';
+@import 'bootstrap/scss/spinners';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/toasts';
+@import 'bootstrap/scss/tooltip';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/utilities/api';
+
+/* Basic Styling i use everywhere */
+:root {
+	--scrollbar-width: 50px;
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html {
+	scroll-behavior: smooth;
+	/* font-size: 62.5%; */
+	font-family: Montserrat, sans-serif;
+	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: overlay;
+}
+label {
+	cursor: pointer;
+	user-select: none;
+}
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	word-spacing: 0em;
+	text-indent: 1em;
+	line-height: 1.3em;
+	margin-bottom: 0.5em;
+	max-width: clamp(40ch, 50%, 75ch);
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+	text-align: justify;
+}
+ul {
+	list-style-type: none;
+}
+
+body {
+	font-size: 1.6rem;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+h1 {
+	font-size: 235%;
+}
+
+h2 {
+	font-size: 200%;
+}
+
+h3 {
+	font-size: 175%;
+}
+
+h4 {
+	font-size: 150%;
+}
+h5 {
+	font-size: 125%;
+}
+h6 {
+	font-size: 100%;
+}

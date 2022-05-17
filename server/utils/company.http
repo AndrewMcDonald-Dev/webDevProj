@@ -1,0 +1,16 @@
+###
+
+post http://localhost:3000/api/companies/seed
+
+
+###
+
+get http://localhost:3000/api/companies
+
+
+###
+
+delete http://localhost:3000/api/companies/4
+
+
+###
